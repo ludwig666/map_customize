@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>map_customize</title>
+<style>
+	html, body { margin:0; padding:0; height:100%; overflow-y:hidden;}
+	.mp0 { margin: 0; padding: 0; }
+	.mb0 { margin-bottom: 0; }
+	.mt15 { margin-top: 15px;}
+	#map-content{ position: relative; }
+	#menu { width: 300px; height:100%; float: left; background-color:#f2f2f2; overflow-y:auto;}
+	#map { width: 1000px; height: 100%; float:left; }
+	#search-box { position:absolute; left:10px; top:10px; width:200px; }
+	.memo { color:#888; font-size: .8em; }
+</style>
+</head>
+<body>
+<nav class="navbar-inverse nabbar-default mb0" role="navigation">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#gnavi">
+				<span class="sr-only">MENU</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+    		<a class="navbar-brand">map_customize</a>
+		</div>
+		<div id="gnavi" class="collapse navbar-collapse navbar-right" >
+			<ul class="nav navbar-nav">
+				<li class="active">
+					<a class="navbar-brand navbar-right" href="https://hogehoge">hogehoge</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<div id="map-content" class="container-fluid mp0">
+	<div id="map"></div>
+	<div id="menu">
+		<div class="col-md-12 mt15">
+			<span>半径（km）</span><span class="memo">※カンマ区切り</span>
+			<input type="text" id="rad-text" class="form-control" value="1,2,3,4,5,6,7,8,9,10"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<span>同士円の中心</span>
+			<div class="input-group">
+				<input type="text" id="center-text" class="form-control" value="35.681021,139.767036">
+				<span class="input-group-btn">
+					<button id="map-center-button" class="btn btn-default" type="button">
+						中心
+					</button>
+				</span>
+			</div>
+			<span class="memo">中心：地図の中心座標を取得します</span><br/>
+		</div>
+		<div class="col-md-12 mt15">
+			<button id="draw-button" class="btn btn-primary" type="button">同心円を描画</button>   
+			<button id="clear-button" class="btn btn-default" type="button">クリア</button>   
+		</div>
+		<hr/>
+		<div class="col-md-12 mt15">
+			<span>塗りつぶし色</span>
+			<input type="text" id="fillColor" class="form-control" value="#FF0000"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<span>塗りつぶし透過度（0-1）</span>
+			<input type="text" id="fillOpacity" class="form-control" value="0.1"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<span>外周線色</span>
+			<input type="text" id="strokeColor" class="form-control" value="#FF0000"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<span>外周線透過度（0-1）</span>
+			<input type="text" id="strokeOpacity" class="form-control" value="1"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<span>外周線太さ（0 以上）</span>
+			<input type="text" id="strokeWeight" class="form-control" value="1"/>
+		</div>
+		<div class="col-md-12 mt15">
+			<div class="memo">塗りつぶししたくないときは「塗りつぶし透過度=0」</div>
+			<div class="memo">外周線を描画したくないときは「外周線太さ=0」</div>
+			<div class="memo">右クリックで緯度経度を表示します</div>
+		</div>
+	</div>
+	<div id="search-box">
+		<div class="input-group">
+			<input type="text" id="search-text" class="form-control" placeholder="Search for...">
+			<span class="input-group-btn">
+				<button id="search-button" class="btn btn-default" type="button">
+					<span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+				</button>   
+			</span>
+		</div>
+	</div>
+</div>
+
+<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+$(function() {
+    alert("Hello, World.");
+});
+</script>
+</body>
+</html>
