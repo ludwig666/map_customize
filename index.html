@@ -1,16 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <style>
-    html, body { margin:0; padding:0; height:100%; overflow-y:hidden;}
-    .mp0 { margin: 0; padding: 0; }
-    .mb0 { margin-bottom: 0; }
-    .mt15 { margin-top: 15px;}
-    #menu { width: 300px; height:100%; float: left; background-color:#f2f2f2; overflow-y:auto;}
-    #map { width: 1000px; height: 100%; float:left; }
-    #search-box { position:absolute; left:10px; top:10px; width:200px; }
-    .memo { color:#888; font-size: .8em; }
-  </style>
   </head>
     <title>Simple Map</title>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -35,6 +25,9 @@
         margin: 0;
         padding: 0;
       }
+      #map-content{ position: relative; }
+      #menu { width: 300px; height:100%; float: left; background-color:#f2f2f2; overflow-y:auto;}
+      #search-box { position:absolute; left:10px; top:10px; width:200px; }
     </style>
     <script>
       "use strict";
